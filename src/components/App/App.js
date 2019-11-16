@@ -1,26 +1,45 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import logo from '../../logo.svg';
 import './App.css';
+import AppActions from './actions';
+import FiveDay from '../FiveDay/FiveDay'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component{
+  render(){
+    return (
+      <div className="App">
+        <div>
+        <button onClick={this.props.setTelAvivEventHandler}
+        >Tel Aviv</button>
+        <button onClick={this.props.setHelsinkiEventHandler}
+        >Helsinki</button>
+        </div>
+
+        <FiveDay/>
+
+      </div>
+    );
+  }
 }
 
-export default App;
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    setTelAvivEventHandler: ()=>{
+      dispatch(AppActions.setTelAvivAction());
+    },
+    setHelsinkiEventHandler: ()=>{
+      dispatch(AppActions.setHelsinkiAction());
+    }
+
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+  }
+}
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
