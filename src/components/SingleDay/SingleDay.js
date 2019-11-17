@@ -1,5 +1,8 @@
 import React from 'react';
+import Card from 'react-bootstrap/Card'
+
 let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+
 
 class SingleDay extends React.Component{
     render(){
@@ -8,15 +11,20 @@ class SingleDay extends React.Component{
         date.setTime(timeStamp*1000) // convert ms->s
 
         return (
-            <div>
-                <p>
-                {days[date.getDay()]}: &nbsp;
-                {this.props.details.Temperature.Minimum.Value}-{this.props.details.Temperature.Maximum.Value}C&nbsp; 
-                {this.props.details.Day.IconPhrase}
-                </p>
+            <Card bg="light" border="secondary">
+                <Card.Header>
+                {days[date.getDay()]}
+                </Card.Header>
+                <Card.Body>
+                    <Card.Text>
+                    {this.props.details.Temperature.Minimum.Value}-{this.props.details.Temperature.Maximum.Value}°C
+                    <br/> 
+                    {this.props.details.Day.IconPhrase}
+                    </Card.Text>
+                </Card.Body>
                 
 
-            </div>
+            </Card>
         )
     }
 }

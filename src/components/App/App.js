@@ -1,19 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import logo from '../../logo.svg';
-import './App.css';
+import '../../App.css';
 import AppActions from './actions';
 import FiveDay from '../FiveDay/FiveDay'
 
 class App extends React.Component{
   render(){
     return (
-      <div className="App">
-        <div>
-        <button onClick={this.props.setTelAvivEventHandler}
-        >Tel Aviv</button>
-        <button onClick={this.props.setHelsinkiEventHandler}
-        >Helsinki</button>
+      <div>
+        <div className="App">
+          <button onClick={this.props.setTelAvivEventHandler}
+          >Tel Aviv</button>
+          <button onClick={this.props.setHelsinkiEventHandler}
+          >Helsinki</button>
         </div>
 
         <FiveDay/>

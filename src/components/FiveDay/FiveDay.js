@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import './FiveDay.css';
 import SingleDay from '../SingleDay/SingleDay'
+import CardGroup from 'react-bootstrap/CardGroup'
 
 class FiveDay extends React.Component{
   componentDidMount() {
@@ -10,12 +11,15 @@ class FiveDay extends React.Component{
   render() {
     return (
       <div className="FiveDay">
-
-
+        
         <h3>{this.props.location_name}</h3>
-                {this.props.results && this.props.results.DailyForecasts.map( (res, idx) => {
-          return (<SingleDay details={res} key={idx}/>)
-        })}
+        <CardGroup>
+        {this.props.results && this.props.results.DailyForecasts.map( (res, idx) => {
+          return (<SingleDay details={res} key={idx}/>)})}
+  
+        </CardGroup>
+                
+        
   
       </div>
     );
