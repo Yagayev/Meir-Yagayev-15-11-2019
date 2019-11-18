@@ -16,8 +16,8 @@ export default {
         favorite_results: Map({})
     }),
     five_day_forcast: Map({
-        location_name: '',
-        location_key: null,
+        location_name: "Tel Aviv",
+        location_key: "215854",
         results: null,
     }),
     
