@@ -4,6 +4,8 @@ import logo from '../../logo.svg';
 import '../../App.css';
 import AppActions from './actions';
 import FiveDay from '../FiveDay/FiveDay'
+import Favorites from '../Favorites/Favorites'
+
 
 class App extends React.Component{
   render(){
@@ -16,7 +18,9 @@ class App extends React.Component{
           >Helsinki</button>
         </div>
 
+        <Favorites/>
         <FiveDay/>
+       
 
       </div>
     );
@@ -38,6 +42,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => {
   return {
+    redirect_to_favourites: state['app'].get('redirect_to_favourites'),
   }
 }
 

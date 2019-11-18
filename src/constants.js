@@ -4,6 +4,9 @@ const Constants = {
 
     SET_FIVE_DAY_RESULTS: "SET_FIVE_DAY_RESULTS",
 
+    ADD_TO_FAVORITES: "ADD_TO_FAVORITES",
+    REMOVE_FROM_FAVORITES: "REMOVE_FROM_FAVORITES",
+
 };
 
 export { Constants }

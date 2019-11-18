@@ -1,12 +1,12 @@
-.App {
+.FiveDay {
   text-align: center;
 }
 
-.App-logo {
+.FiveDay-logo {
   height: 40vmin;
 }
 
-.App-header {
+.FiveDay-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
@@ -17,10 +17,6 @@
   color: white;
 }
 
-.App-link {
+.FiveDay-link {
   color: #09d3ac;
-}
-
-.flex-container {
-  display: flex;
 }

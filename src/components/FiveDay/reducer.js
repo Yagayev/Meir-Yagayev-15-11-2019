@@ -3,6 +3,7 @@ import { Constants } from '../../constants';
 
 
 const FiveDayReducer = (state = initialState.five_day_forcast, action) => {
+
     switch (action.type){
         case Constants.REDUCER_ACTION: 
             return state;

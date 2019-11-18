@@ -14,9 +14,36 @@ function sagaAction(){
     }
 }
 
+function removeFromFavorites(id){
+    return {
+        type: Constants.REMOVE_FROM_FAVORITES,
+        id: id
+    }
+
+}
+
+function addToFavorites(id){
+    return {
+        type: Constants.ADD_TO_FAVORITES,
+        id: id
+    }
+}
+
+function flipFavoriteStatusAction(isFavorite, id){
+    if(isFavorite){
+        return removeFromFavorites(id);
+    }
+    else{
+        return addToFavorites(id);
+    }
+}
+
 let FiveDayActions = {
     reducerAction,
     sagaAction,
+    addToFavorites,
+    removeFromFavorites,
+    flipFavoriteStatusAction
 }
 
 export default FiveDayActions;

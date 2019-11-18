@@ -22,9 +22,9 @@ function* handle(action){
     }
     
 
-function* FiveDaySaga() {
+function* FavoritesSaga() {
     //using takeEvery, you take the action away from reducer to saga
     yield takeEvery(Constants.SAGA_ACTION, handle);
 }
 
-export default FiveDaySaga;
+export default FavoritesSaga;
