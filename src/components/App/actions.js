@@ -14,9 +14,17 @@ function redirectToFiveDay(){
 }
 
 
+function clearErrorAction(){
+    return {
+        type: Constants.CLEAR_ERROR
+    }
+}
+
+
 let AppActions = {    
     redirectToFavorites,
-    redirectToFiveDay
+    redirectToFiveDay,
+    clearErrorAction
 }
 
 export default AppActions;

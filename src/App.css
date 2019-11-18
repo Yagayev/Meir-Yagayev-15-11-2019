@@ -29,3 +29,9 @@
 .Favorite-card{
   width: 150px;
 }
+
+.Toast{
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
+}

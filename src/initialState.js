@@ -1,11 +1,11 @@
 
-const { List, Map } = require('immutable');
+const { Map } = require('immutable');
 
 export default {
     app: Map({
-        redirect_to_favourites: false
-
-
+        redirect_to_favourites: false,
+        error: false,
+        error_msg: null
     }),
     search: Map({
         search_term: "",

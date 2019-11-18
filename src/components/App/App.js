@@ -5,6 +5,7 @@ import AppActions from './actions';
 import FiveDay from '../FiveDay/FiveDay';
 import Favorites from '../Favorites/Favorites';
 import Search from '../Search/Search';
+import Toast from 'react-bootstrap/Toast'
 
 class App extends React.Component{
   render(){
@@ -21,6 +22,12 @@ class App extends React.Component{
         <Search className="App"/>
         </div>
         
+        <Toast className="Toast" show={this.props.error} onClose={this.props.clearErrorHandler}>
+          <Toast.Header>
+            <strong>Error</strong>
+          </Toast.Header>
+          <Toast.Body>{this.props.error_msg}</Toast.Body>
+        </Toast>
         
        
 
@@ -38,6 +45,9 @@ const mapDispatchToProps = (dispatch) => {
     redirectToFiveDayHandler: ()=>{
       dispatch(AppActions.redirectToFiveDay());
     },
+    clearErrorHandler: ()=>{
+      dispatch(AppActions.clearErrorAction());
+    }
 
   }
 }
@@ -45,6 +55,8 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
   return {
     redirect_to_favourites: state['app'].get('redirect_to_favourites'),
+    error: state['app'].get('error'),
+    error_msg: state['app'].get('error_msg'),
   }
 }
 

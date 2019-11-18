@@ -31,7 +31,6 @@ class Search extends React.Component{
                                   variant="light"
                                   onClick={()=>this.props.setLocationHandler(res.LocalizedName, res.Key)}
                                   key={"search"+idx}>
-
                       {res.LocalizedName}
                   </ListGroup.Item>
               )
