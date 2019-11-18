@@ -16,10 +16,14 @@ class App extends React.Component{
           >Tel Aviv</button>
           <button onClick={this.props.setHelsinkiEventHandler}
           >Helsinki</button>
+          <button onClick={this.props.redirectToFiveDayHandler}
+          >5 days forecast</button>
+          <button onClick={this.props.redirectToFavooritesHandler}
+          >Favorites</button>
         </div>
-
-        <Favorites/>
-        <FiveDay/>
+        {this.props.redirect_to_favourites&&<Favorites/>}
+        {!this.props.redirect_to_favourites&&<FiveDay/>}
+        
        
 
       </div>
@@ -35,7 +39,13 @@ const mapDispatchToProps = (dispatch) => {
     },
     setHelsinkiEventHandler: ()=>{
       dispatch(AppActions.setHelsinkiAction());
-    }
+    },
+    redirectToFavooritesHandler: ()=>{
+      dispatch(AppActions.redirectToFavorites());
+    },
+    redirectToFiveDayHandler: ()=>{
+      dispatch(AppActions.redirectToFiveDay());
+    },
 
   }
 }

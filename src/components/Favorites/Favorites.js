@@ -3,10 +3,11 @@ import { connect } from 'react-redux';
 import './Favorites.css';
 import FavoriteLocation from '../FavoriteLocation/FavoriteLocation'
 import CardGroup from 'react-bootstrap/CardGroup'
+import FavoritesActions from './actions';
 
 class Favorites extends React.Component{
   componentDidMount() {
-    
+    this.props.loadFavoritesHandler();
   };
 
   render() {
@@ -31,6 +32,9 @@ class Favorites extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    loadFavoritesHandler: () => {
+      dispatch(FavoritesActions.loadFavoritesAction());
+    }
     
 
   }

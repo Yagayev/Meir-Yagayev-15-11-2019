@@ -14,6 +14,18 @@ function sagaAction(){
     }
 }
 
+function redirectToFavorites(){
+    return {
+        type: Constants.REDIRECT_TO_FAVORITES
+    }
+}
+
+function redirectToFiveDay(){
+    return {
+        type: Constants.REDIRECT_TO_FIVE_DAYS
+    }
+}
+
 function setTelAvivAction(){
     return{
         type: Constants.SET_FIVE_DAY_RESULTS,
@@ -394,7 +406,10 @@ let AppActions = {
     reducerAction,
     sagaAction,
     setTelAvivAction,
-    setHelsinkiAction
+    setHelsinkiAction,
+    
+    redirectToFavorites,
+    redirectToFiveDay
 }
 
 export default AppActions;

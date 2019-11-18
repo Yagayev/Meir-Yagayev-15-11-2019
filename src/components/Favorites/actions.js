@@ -14,9 +14,17 @@ function sagaAction(){
     }
 }
 
+function loadFavoritesAction(){
+    return {
+        type: Constants.LOAD_FAVORITES
+    }
+}
+
+
 let FiveDayActions = {
     reducerAction,
     sagaAction,
+    loadFavoritesAction
 }
 
 export default FiveDayActions;

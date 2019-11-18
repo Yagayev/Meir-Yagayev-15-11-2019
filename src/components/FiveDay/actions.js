@@ -38,12 +38,13 @@ function flipFavoriteStatusAction(isFavorite, id){
     }
 }
 
+
 let FiveDayActions = {
     reducerAction,
     sagaAction,
     addToFavorites,
     removeFromFavorites,
-    flipFavoriteStatusAction
+    flipFavoriteStatusAction,
 }
 
 export default FiveDayActions;

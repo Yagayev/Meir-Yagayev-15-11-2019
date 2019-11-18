@@ -1,6 +1,10 @@
 import initialState from '../../initialState';
 import { Constants } from '../../constants';
-const { List } = require('immutable');
+import {setInStorage, getFromStorage} from '../../Storage'
+import {List} from "immutable"
+
+const storageKey = "UniqueMeirHeroloAppStorageKey"
+
 
 function arrayRemove(arr, val){
     return arr.filter(o => o !== val);
@@ -23,15 +27,24 @@ const FavoritesReducer = (state = initialState.favorites, action) => {
             return state;
         case Constants.ADD_TO_FAVORITES:
             favs = state.get('favorite_locations');
-            favs = arrayAddIfNotContains(favs, action.id)
-            // TODO add save to file
+            favs = arrayAddIfNotContains(favs, action.id);
+            setInStorage(storageKey, favs);
+
             state = state.set('favorite_locations', favs);
             return state;
         case Constants.REMOVE_FROM_FAVORITES:
             favs = state.get('favorite_locations');
             favs = arrayRemove(favs, action.id)
-            // TODO add save to file
-            return state.set('favorite_locations', favs)
+            setInStorage(storageKey, favs);
+            return state.set('favorite_locations', favs);
+        case Constants.LOAD_FAVORITES:
+            favs = getFromStorage(storageKey);
+            console.log(favs);
+            if(favs!==null){
+                console.log(favs);
+                state = state.set('favorite_locations', new List(favs));
+            }
+            return state;
         default:
             return state;
     }

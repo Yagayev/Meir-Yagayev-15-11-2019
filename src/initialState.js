@@ -5,6 +5,7 @@ export default {
     app: Map({
         redirect_to_favourites: false
 
+
     }),
     search: Map({
         search_term: "",
