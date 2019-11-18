@@ -12,7 +12,8 @@ export default {
         results: Map({}),
     }),
     favorites: Map({
-        favorite_locations: List([]),
+        favorite_locations: Map({}),
+        favorite_results: Map({})
     }),
     five_day_forcast: Map({
         location_name: '',

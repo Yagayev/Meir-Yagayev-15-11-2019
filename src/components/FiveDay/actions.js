@@ -16,27 +16,29 @@ function sagaAction(){
     }
 }
 
-function removeFromFavorites(id){
+function removeFromFavorites(name, key){
     return {
         type: Constants.REMOVE_FROM_FAVORITES,
-        id: id
+        name: name, 
+        key: key
     }
 
 }
 
-function addToFavorites(id){
+function addToFavorites(name, key){
     return {
         type: Constants.ADD_TO_FAVORITES,
-        id: id
+        key: key,
+        name: name
     }
 }
 
-function flipFavoriteStatusAction(isFavorite, id){
+function flipFavoriteStatusAction(isFavorite, name, key){
     if(isFavorite){
-        return removeFromFavorites(id);
+        return removeFromFavorites(name, key);
     }
     else{
-        return addToFavorites(id);
+        return addToFavorites(name, key);
     }
 }
 

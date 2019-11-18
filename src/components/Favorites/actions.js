@@ -20,11 +20,23 @@ function loadFavoritesAction(){
     }
 }
 
+function setLocationAction(name, key){
+    return{
+        type: Constants.SET_LOCATION_KEY,
+        payload: {
+            key: key,
+            name: name
+        }
+    }
+}
+
+
 
 let FiveDayActions = {
     reducerAction,
     sagaAction,
-    loadFavoritesAction
+    loadFavoritesAction,
+    setLocationAction
 }
 
 export default FiveDayActions;

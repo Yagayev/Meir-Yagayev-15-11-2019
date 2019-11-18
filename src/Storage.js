@@ -16,16 +16,13 @@ export function getFromStorage(key){
     }
 }
 export function setInStorage(key, val){
-    console.log("saving to storage", val)
     if(!key){
-        // console.log("setInStorage error: no key");
+        return;
     }
-
-
     try {
         localStorage.setItem(key, JSON.stringify(val));
     }
     catch(err){
-        // console.log("setInStorage error:", err);
+        return;
     }
 }

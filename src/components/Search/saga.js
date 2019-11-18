@@ -6,10 +6,8 @@ import axios from 'axios';
 
 
 function* handleLoadDetails(action){
-  console.log("handleLoadDetails")
   try {
     const res = yield call(axios.get, action.uri);
-    console.log("res: ", res)
     yield put(SearchActions.updateSearchResultsActions(res));
   } catch (e) {
     yield put(SearchActions.setError(e.message));

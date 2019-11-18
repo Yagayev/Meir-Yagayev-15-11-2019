@@ -6,11 +6,9 @@ import axios from 'axios';
 
 
 function* handleLoadDetails(action){
-  console.log("handleLoadDetails")
   try {
     const res = yield call(axios.get, action.uri);
 
-    console.log("res: ", res)
     yield put(FiveDayActions.setFiveDayAction(res));
   } catch (e) {
     yield put(FiveDayActions.setError(e.message));

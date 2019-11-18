@@ -11,9 +11,9 @@ class FavoriteLocation extends React.Component{
 
     render(){
         return (
-            <Card bg="light" border="secondary" className="Favorite-card" >
+            <Card bg="light" border="secondary" className="Favorite-card" onClick={this.props.clickHandler}>
                 <Card.Header>
-                {this.props.id}
+                {this.props.name}
                 </Card.Header>
                 <Card.Body>
                     <Card.Text>
