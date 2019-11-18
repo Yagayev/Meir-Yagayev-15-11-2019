@@ -9,22 +9,30 @@ import FiveDayActions from './actions'
 
 class FiveDay extends React.Component{
   componentDidMount() {
+    if(this.props.location_key){
+      this.props.loadFiveDayForecastHandler(this.props.location_key);
+    }
     
   };
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location_key&&this.props.location_key !== prevProps.location_key) {
+      this.props.loadFiveDayForecastHandler(this.props.location_key);
+    }
+  }
 
   render() {
     let is_favourite = this.props.favorite_locations.includes(this.props.location_key);
     return (
       
       <div className="FiveDay">
-        <p>{String(this.props.favorite_locations)}</p>
         <h3>
           {this.props.location_name}
           {this.props.location_name!==""&&(<FavIcon isFaveorite={is_favourite} 
                                                     flipFavoriteStatusHandler={()=>this.props.flipFavoriteStatusHandler(is_favourite, this.props.location_key)}/>)}
         </h3>
         <CardGroup>
-        {this.props.results && this.props.results.DailyForecasts.map( (res, idx) => {
+        {this.props.results && this.props.results.map( (res, idx) => {
           return (<SingleDay details={res} key={idx}/>)})}
   
         </CardGroup>
@@ -37,6 +45,9 @@ const mapDispatchToProps = (dispatch) => {
   return {
     flipFavoriteStatusHandler: (is_favourite, location_key)=>{
       dispatch(FiveDayActions.flipFavoriteStatusAction(is_favourite, location_key));
+    },
+    loadFiveDayForecastHandler: (location_key)=>{
+      dispatch(FiveDayActions.loadFiveDayForecastAction(location_key));
     },
 
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card'
+import '../../App.css';
 
 
 
@@ -10,7 +11,7 @@ class FavoriteLocation extends React.Component{
 
     render(){
         return (
-            <Card bg="light" border="secondary">
+            <Card bg="light" border="secondary" className="Favorite-card" >
                 <Card.Header>
                 {this.props.id}
                 </Card.Header>

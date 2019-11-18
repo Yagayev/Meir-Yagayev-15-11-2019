@@ -1,8 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './Favorites.css';
+import '../../App.css';
 import FavoriteLocation from '../FavoriteLocation/FavoriteLocation'
 import CardGroup from 'react-bootstrap/CardGroup'
+import CardDeck from 'react-bootstrap/CardDeck'
+
 import FavoritesActions from './actions';
 
 class Favorites extends React.Component{
@@ -16,12 +18,12 @@ class Favorites extends React.Component{
     return (
       <div className="FiveDay">
         
-        <CardGroup>
+        <CardDeck>
         {this.props.favorite_locations.map( (res, idx) => {
 
           return (<FavoriteLocation loacation_key={res} id={idx} key={"fav"+idx}/>)})}
   
-        </CardGroup>
+        </CardDeck>
                 
         
   

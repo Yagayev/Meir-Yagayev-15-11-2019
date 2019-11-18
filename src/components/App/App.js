@@ -21,6 +21,7 @@ class App extends React.Component{
           <button onClick={this.props.redirectToFavooritesHandler}
           >Favorites</button>
         </div>
+        
         {this.props.redirect_to_favourites&&<Favorites/>}
         {!this.props.redirect_to_favourites&&<FiveDay/>}
         

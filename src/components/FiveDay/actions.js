@@ -1,4 +1,6 @@
 import { Constants } from '../../constants';
+import {fiveDays} from '../../apiURLs'
+import { accuwatherKey } from '../../config'
 
 function reducerAction(val){
     return {
@@ -38,6 +40,29 @@ function flipFavoriteStatusAction(isFavorite, id){
     }
 }
 
+function loadFiveDayForecastAction(loction_key){
+    // uri: fiveDays+loction_key+"?apikey="+accuwatherKey+"&metric=true"
+    return {
+        type: Constants.LOAD_5_DAY_WEATHER_DETAILS,
+        uri: fiveDays+loction_key+"?apikey="+accuwatherKey+"&metric=true"
+        
+    }
+}
+
+function setFiveDayAction(res){
+    return{
+        type: Constants.SET_FIVE_DAY_RESULTS,
+        payload: res
+    }
+}
+
+function setError(message){
+    return {
+        type: Constants.ERROR,
+        msg: message
+    }
+}
+
 
 let FiveDayActions = {
     reducerAction,
@@ -45,6 +70,10 @@ let FiveDayActions = {
     addToFavorites,
     removeFromFavorites,
     flipFavoriteStatusAction,
+    loadFiveDayForecastAction,
+    setFiveDayAction,
+    setError
+
 }
 
 export default FiveDayActions;

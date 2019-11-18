@@ -8,9 +8,13 @@ const FiveDayReducer = (state = initialState.five_day_forcast, action) => {
         case Constants.REDUCER_ACTION: 
             return state;
         case Constants.SET_FIVE_DAY_RESULTS:
+            console.log(action);
+            state = state.set('results', action.payload.data.DailyForecasts);
+            console.log(state)
+            return state;
+        case Constants.SET_LOCATION_KEY:
             state = state.set('location_name', action.payload.name);
             state = state.set('location_key', action.payload.key);
-            state = state.set('results', action.payload.results);
             return state;
         default:
             return state;

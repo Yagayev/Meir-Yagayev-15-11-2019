@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.FiveDay {
+  text-align: center;
+}
+
 .App-logo {
   height: 40vmin;
 }
@@ -21,6 +25,7 @@
   color: #09d3ac;
 }
 
-.flex-container {
-  display: flex;
+
+.Favorite-card{
+  width: 150px;
 }
