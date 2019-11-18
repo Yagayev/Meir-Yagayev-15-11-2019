@@ -9,7 +9,7 @@ export default {
     }),
     search: Map({
         search_term: "",
-        suggestions: [],
+        results: Map({}),
     }),
     favorites: Map({
         favorite_locations: List([]),

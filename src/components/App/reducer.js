@@ -11,6 +11,10 @@ const AppReducer = (state = initialState.app, action) => {
 
         case Constants.REDIRECT_TO_FIVE_DAYS:
             return state.set('redirect_to_favourites', false);
+        
+        case Constants.SET_LOCATION_KEY:
+                // nullify search results after a new location was selected
+                return state.set('redirect_to_favourites', false);
             
         default:
             return state;

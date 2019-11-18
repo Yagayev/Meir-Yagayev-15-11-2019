@@ -1,5 +1,6 @@
 
 const fiveDays = "http://dataservice.accuweather.com/forecasts/v1/daily/5day/"
+// "http://dataservice.accuweather.com/forecasts/v1/daily/5day/215854?apikey=kuPFhszoaAEAzg3NAcbPOreli9MDNkVl&metric=true"
 // + locationKey (215854)
 // {
 //     apikey: key,

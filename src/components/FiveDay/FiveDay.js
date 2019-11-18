@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import './FiveDay.css';
 import SingleDay from '../SingleDay/SingleDay'
 import CardGroup from 'react-bootstrap/CardGroup'
 import FavIcon from '../FavIcon/FavIcon'

@@ -3,9 +3,9 @@ import { connect } from 'react-redux';
 import logo from '../../logo.svg';
 import '../../App.css';
 import AppActions from './actions';
-import FiveDay from '../FiveDay/FiveDay'
-import Favorites from '../Favorites/Favorites'
-
+import FiveDay from '../FiveDay/FiveDay';
+import Favorites from '../Favorites/Favorites';
+import Search from '../Search/Search';
 
 class App extends React.Component{
   render(){
@@ -20,10 +20,12 @@ class App extends React.Component{
           >5 days forecast</button>
           <button onClick={this.props.redirectToFavooritesHandler}
           >Favorites</button>
-        </div>
-        
+
         {this.props.redirect_to_favourites&&<Favorites/>}
         {!this.props.redirect_to_favourites&&<FiveDay/>}
+        <Search className="App"/>
+        </div>
+        
         
        
 
