@@ -21,7 +21,7 @@ class FiveDay extends React.Component{
   }
 
   render() {
-    let is_favourite = this.props.favorite_locations.includes(this.props.location_key);
+    let is_favourite = this.props.favorite_locations.get(this.props.location_key)!==undefined;
     return (
       
       <div className="FiveDay">

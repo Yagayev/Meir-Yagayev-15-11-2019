@@ -1,18 +1,7 @@
 import { Constants } from '../../constants';
+import { oneDay } from '../../apiURLs'
+import { accuwatherKey } from '../../config'
 
-function reducerAction(val){
-    return {
-        type: Constants.REDUCER_ACTION,
-        val: val
-    }
-}
-
-function sagaAction(){
-    return {
-        uri: 'api/uri',
-        type: Constants.SAGA_ACTION
-    }
-}
 
 function loadFavoritesAction(){
     return {
@@ -30,13 +19,36 @@ function setLocationAction(name, key){
     }
 }
 
-
-
-let FiveDayActions = {
-    reducerAction,
-    sagaAction,
-    loadFavoritesAction,
-    setLocationAction
+function loadFavoriteWeather(key){
+    return {
+        type: Constants.GET_FAVORITE_WEATHER,
+        key: key,
+        uri: oneDay+key+"?apikey="+accuwatherKey
+    }
 }
 
-export default FiveDayActions;
+function updateFavoriteWeather(key, val){
+    return {
+        type: Constants.UPDATE_FAVORITE_WEATHER,
+        key: key,
+        payload: val
+    }
+}
+
+function setError(message){
+    return {
+        type: Constants.ERROR,
+        msg: message
+    }
+}
+
+
+let FavoriteActions = {
+    loadFavoritesAction,
+    setLocationAction,
+    loadFavoriteWeather,
+    updateFavoriteWeather,
+    setError
+}
+
+export default FavoriteActions;

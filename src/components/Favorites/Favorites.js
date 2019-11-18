@@ -22,7 +22,7 @@ class Favorites extends React.Component{
                                     id={idx} 
                                     key={"fav"+key} 
                                     clickHandler={()=>this.props.setLocationHandler(name, key)}
-                                    details={this.props.favorite_results(key)}
+                                    details={this.props.favorite_results.get(key)}
                                     getWeatherHandler={()=>this.props.getFavoriteWeatherHandler(key)}
                                     name={name}/>)})}
         </CardDeck>
@@ -40,7 +40,7 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(FavoritesActions.setLocationAction(name, key));
     },
     getFavoriteWeatherHandler(key){
-
+      dispatch(FavoritesActions.loadFavoriteWeather(key));
     }
     
 

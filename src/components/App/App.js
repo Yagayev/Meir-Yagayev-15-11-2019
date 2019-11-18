@@ -1,6 +1,5 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import logo from '../../logo.svg';
 import '../../App.css';
 import AppActions from './actions';
 import FiveDay from '../FiveDay/FiveDay';
@@ -12,10 +11,6 @@ class App extends React.Component{
     return (
       <div>
         <div className="App">
-          <button onClick={this.props.setTelAvivEventHandler}
-          >Tel Aviv</button>
-          <button onClick={this.props.setHelsinkiEventHandler}
-          >Helsinki</button>
           <button onClick={this.props.redirectToFiveDayHandler}
           >5 days forecast</button>
           <button onClick={this.props.redirectToFavooritesHandler}
@@ -37,12 +32,6 @@ class App extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    setTelAvivEventHandler: ()=>{
-      dispatch(AppActions.setTelAvivAction());
-    },
-    setHelsinkiEventHandler: ()=>{
-      dispatch(AppActions.setHelsinkiAction());
-    },
     redirectToFavooritesHandler: ()=>{
       dispatch(AppActions.redirectToFavorites());
     },

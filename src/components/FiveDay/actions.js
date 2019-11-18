@@ -2,20 +2,6 @@ import { Constants } from '../../constants';
 import {fiveDays} from '../../apiURLs'
 import { accuwatherKey } from '../../config'
 
-function reducerAction(val){
-    return {
-        type: Constants.REDUCER_ACTION,
-        val: val
-    }
-}
-
-function sagaAction(){
-    return {
-        uri: 'api/uri',
-        type: Constants.SAGA_ACTION
-    }
-}
-
 function removeFromFavorites(name, key){
     return {
         type: Constants.REMOVE_FROM_FAVORITES,
@@ -43,7 +29,6 @@ function flipFavoriteStatusAction(isFavorite, name, key){
 }
 
 function loadFiveDayForecastAction(loction_key){
-    // uri: fiveDays+loction_key+"?apikey="+accuwatherKey+"&metric=true"
     return {
         type: Constants.LOAD_5_DAY_WEATHER_DETAILS,
         uri: fiveDays+loction_key+"?apikey="+accuwatherKey+"&metric=true"
@@ -67,8 +52,6 @@ function setError(message){
 
 
 let FiveDayActions = {
-    reducerAction,
-    sagaAction,
     addToFavorites,
     removeFromFavorites,
     flipFavoriteStatusAction,

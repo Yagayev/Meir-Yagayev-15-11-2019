@@ -5,9 +5,9 @@ import '../../App.css';
 
 
 class FavoriteLocation extends React.Component{
-    componentDidMount(){
-        // TODO this.props.loadWeatherHandler(this.props.id, this.props.loacation_key)
-    }
+    componentDidMount() {
+        this.props.getWeatherHandler();
+      };
 
     render(){
         return (
@@ -16,9 +16,11 @@ class FavoriteLocation extends React.Component{
                 {this.props.name}
                 </Card.Header>
                 <Card.Body>
-                    <Card.Text>
-                    {this.props.loacation_key}
-                    </Card.Text>
+                {this.props.details&&(<Card.Text>
+                    {this.props.details.WeatherText}
+                    <br/>
+                    {this.props.details.Temperature.Metric.Value}°C
+                    </Card.Text>)}
                 </Card.Body>
                 
 

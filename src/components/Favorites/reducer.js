@@ -28,6 +28,8 @@ const FavoritesReducer = (state = initialState.favorites, action) => {
                 state = state.set('favorite_locations', new Map(favs));
             }
             return state;
+        case Constants.UPDATE_FAVORITE_WEATHER:
+            return state.setIn(['favorite_results', action.key], action.payload.data[0])
         default:
             return state;
     }
