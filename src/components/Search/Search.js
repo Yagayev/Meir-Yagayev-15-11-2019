@@ -20,7 +20,10 @@ class Search extends React.Component{
       
       <div>
         <br/>
-        <InputText value={this.props.search_term} onChange={this.props.updateSearchTermHandler} placeholder="Search"/>
+        <InputText value={this.props.search_term} 
+                   onChange={this.props.updateSearchTermHandler} 
+                   onKeyPress={(e)=>{if(e.key === 'Enter'){this.props.submitSearchHandler(this.props.search_term)}}}
+                   placeholder="Search" />
         <br/>
         <Button variant="primary" size="sm" onClick={()=>{this.props.submitSearchHandler(this.props.search_term)}}>Search</Button>
         <ListGroup>
