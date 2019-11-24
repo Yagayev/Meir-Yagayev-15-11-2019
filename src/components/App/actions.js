@@ -1,5 +1,10 @@
 import { Constants } from '../../constants';
 
+function loadFavoritesAction(){
+    return {
+        type: Constants.LOAD_FAVORITES
+    }
+}
 
 function redirectToFavorites(){
     return {
@@ -24,7 +29,9 @@ function clearErrorAction(){
 let AppActions = {    
     redirectToFavorites,
     redirectToFiveDay,
-    clearErrorAction
+    clearErrorAction,
+    loadFavoritesAction,
+
 }
 
 export default AppActions;

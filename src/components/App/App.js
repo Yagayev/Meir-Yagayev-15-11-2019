@@ -8,6 +8,11 @@ import Search from '../Search/Search';
 import Toast from 'react-bootstrap/Toast'
 
 class App extends React.Component{
+
+  componentDidMount() {
+    this.props.loadFavoritesHandler();
+  };
+  
   render(){
     return (
       <div>
@@ -47,7 +52,10 @@ const mapDispatchToProps = (dispatch) => {
     },
     clearErrorHandler: ()=>{
       dispatch(AppActions.clearErrorAction());
-    }
+    },
+    loadFavoritesHandler: () => {
+      dispatch(AppActions.loadFavoritesAction());
+    },
 
   }
 }

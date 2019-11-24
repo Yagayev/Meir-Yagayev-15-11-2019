@@ -7,9 +7,7 @@ import CardDeck from 'react-bootstrap/CardDeck'
 import FavoritesActions from './actions';
 
 class Favorites extends React.Component{
-  componentDidMount() {
-    this.props.loadFavoritesHandler();
-  };
+
 
   render() {
     return (
@@ -33,9 +31,7 @@ class Favorites extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    loadFavoritesHandler: () => {
-      dispatch(FavoritesActions.loadFavoritesAction());
-    },
+
     setLocationHandler: (name, key) =>{
       dispatch(FavoritesActions.setLocationAction(name, key));
     },
